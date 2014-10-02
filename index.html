@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="SHTOOLS : Tools for working with spherical harmonics">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>SHTOOLS</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/MarkWieczorek/SHTOOLS">View on GitHub</a>
+
+          <h1 id="project_title">SHTOOLS</h1>
+          <h2 id="project_tagline">Tools for working with spherical harmonics</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/MarkWieczorek/SHTOOLS/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/MarkWieczorek/SHTOOLS/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="shtools---tools-for-working-with-spherical-harmonics" class="anchor" href="#shtools---tools-for-working-with-spherical-harmonics"><span class="octicon octicon-link"></span></a>SHTOOLS - Tools for working with spherical harmonics</h2>
+
+<p>SHTOOLS is an archive of fortran 95 based software that can be used to perform spherical harmonic transforms and reconstructions, rotations of data expressed in spherical harmonics, and multitaper spectral analyses on the sphere.</p>
+
+<h3>
+<a name="what-makes-shtools-different" class="anchor" href="#what-makes-shtools-different"><span class="octicon octicon-link"></span></a>What makes SHTOOLS different?</h3>
+
+<p>While several collections of code exist for working with data expressed in spherical harmonics, this one is unique for several reasons:</p>
+
+<ul>
+<li><p>It can accommodate any standard normalization of the spherical harmonic functions ("geodesy" 4π normalized,  Schmidt semi-normalized, orthonormalized, and unnormalized).</p></li>
+<li><p>Both real and complex spherical harmonics are supported.</p></li>
+<li><p>Spherical harmonic transforms are calculated by exact quadrature rules using either (1) the sampling theorem of <em>Driscoll and Healy</em> (1994) where data are equally sampled (or spaced) in latitude and longitude, or (2) Gauss-Legendre quadrature. A least squares inversion routine for irregularly sampled data is included.</p></li>
+<li><p>One can choose to use or exclude the Condon-Shortley phase factor of (-1)<sup>m</sup> with the associated Legendre functions.</p></li>
+<li><p>The spherical harmonic transforms are proven to be accurate to approximately degree 2800, corresponding to a spatial resolution of better than 4 arc minutes.</p></li>
+<li><p>Routines are included for performing localized multitaper spectral analyses.</p></li>
+<li><p>Routines are included for performing standard gravity and magnetic field calculations, such as computation of the geoid and the determination of the potential associated with finite-amplitude topography.</p></li>
+<li><p>The routines are fast. Spherical harmonic transforms and reconstructions take on the order of 1 second for bandwidths less than 600 and about 3 minutes for bandwidths close to 2800.</p></li>
+</ul><h3>
+<a name="how-do-i-use-shtools" class="anchor" href="#how-do-i-use-shtools"><span class="octicon octicon-link"></span></a>How do I use SHTOOLS?</h3>
+
+<p>SHTOOLS is invoked by standard subroutine and function calls in your fortran 90/95 program. For some routines, it will be necessary to have installed the freely available Fourier transform package <a href="http://www.fftw.org">FFTW</a>, and the linear algebra packages <a href="http://www.netlib.org/lapack/">LAPACK</a> and <a href="http://www.netlib.org/blas/">BLAS</a>.</p>
+
+<h3>
+<a name="how-much-does-it-cost" class="anchor" href="#how-much-does-it-cost"><span class="octicon octicon-link"></span></a>How much does it cost?</h3>
+
+<p>The SHTOOLS software package is free. Two free Fortran 95 compilers exist (gfortran as part of <a href="http://gcc.gnu.org/">GCC</a> and <a href="http://www.g95.org/">g95</a>). SHTOOLS can be modified and distributed according to the revised BSD license.</p>
+
+<h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">SHTOOLS maintained by <a href="https://github.com/MarkWieczorek">MarkWieczorek</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
