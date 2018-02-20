@@ -93,7 +93,7 @@ def process_mddoc(fname_mddoc):
     # ---- open md file and search for patterns ----
     with open(fname_mddoc, 'r') as mdfile:
         # remove the first two lines
-        mdstring = mdfile.read().split('\n', 2)[2]
+        mdstring = mdfile.read().encode().decode('utf-8').split('\n', 2)[2]
 
     # First, remove '## Value\n\n' from constant documentation
     match = revalue.search(mdstring)
